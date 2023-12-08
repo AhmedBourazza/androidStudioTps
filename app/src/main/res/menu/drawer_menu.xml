@@ -12,11 +12,14 @@
             android:icon="@drawable/ic_calculate"
             android:title="Calculatrice"/>
     </group>
-    <item android:title="communicate">
+    <item android:title="Tasks">
         <menu>
             <item android:id="@+id/nav_share"
                 android:icon="@drawable/baseline_share_24"
                 android:title="Share"/>
+            <item android:id="@+id/nav_logout"
+                android:icon="@drawable/ac_logout"
+                android:title="Déconnexion"/>
 
         </menu>
 

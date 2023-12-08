@@ -67,15 +67,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 startActivity(i);
             }
         });
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent =new Intent(Home.this,MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });*/
+      */
     }
 
     @Override
@@ -88,6 +80,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmennt_container,
                     new CalculatriceFragment()).commit();
+        }
+        else if(item.getItemId() == R.id.nav_logout)
+        {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent =new Intent(Home.this,MainActivity.class);
+            startActivity(intent);
+            finish();
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
