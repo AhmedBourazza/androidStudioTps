@@ -81,6 +81,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmennt_container,
                     new CalculatriceFragment()).commit();
         }
+        else if(item.getItemId() == R.id.nav_profil)
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmennt_container,
+                    new ProfilFragment()).commit();
+        }
         else if(item.getItemId() == R.id.nav_logout)
         {
             FirebaseAuth.getInstance().signOut();
