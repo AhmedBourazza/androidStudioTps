@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "268606399487",
+    "project_id": "tpsp-3f216",
+    "storage_bucket": "tpsp-3f216.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268606399487:android:f01789c6a9676d429d3dca",
+        "android_client_info": {
+          "package_name": "com.example.tps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApqIILHJEj6tK28up9565iC68-qmySQUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
