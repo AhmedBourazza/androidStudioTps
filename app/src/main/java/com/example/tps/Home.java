@@ -7,12 +7,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -30,7 +34,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     FrameLayout map;
 
 
+    private TextView previousCalculation;
+    private EditText display;
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +57,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         if(savedInstanceState==null)
         {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmennt_container,
-                    new MapFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_map);
+                    new ProfilFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_profil);
 
         }
 
@@ -68,7 +76,16 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
       */
+
+
+
+
+
+
     }
+//calcul
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -76,11 +93,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmennt_container,
                     new MapFragment()).commit();
         }
-        else if(item.getItemId() == R.id.nav_calculatrice)
-        {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmennt_container,
-                    new CalculatriceFragment()).commit();
-        }
+
         else if(item.getItemId() == R.id.nav_profil)
         {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmennt_container,
@@ -96,7 +109,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+//calcul
     @Override
     public void onBackPressed() {
         if(drawer.isDrawerOpen(GravityCompat.START))
