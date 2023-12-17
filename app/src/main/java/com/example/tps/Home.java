@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.facebook.login.LoginManager;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -102,6 +103,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         else if(item.getItemId() == R.id.nav_logout)
         {
             FirebaseAuth.getInstance().signOut();
+            LoginManager.getInstance().logOut();
+
             Intent intent =new Intent(Home.this,MainActivity.class);
             startActivity(intent);
             finish();
